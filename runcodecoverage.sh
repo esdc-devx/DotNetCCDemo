@@ -1,5 +1,5 @@
 #!/bin/bash
 
 docker run  \
--v "$(pwd)"/out:/app/webpoctest/TestResults \
+-v "$(pwd)"/out:/app/test-results \
 autotests:latest
