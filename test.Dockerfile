@@ -25,5 +25,10 @@ COPY webpoctest/. .
 
 RUN dotnet test
 
-ENTRYPOINT ["/app/tools/coverlet", "/app/webpoctest/bin/Debug/netcoreapp2.0/webpoctest.dll","--target","dotnet","--targetargs","test --no-build"]
+ENTRYPOINT ["/app/tools/coverlet", \
+ "/app/webpoctest/bin/Debug/netcoreapp2.0/webpoctest.dll", \
+ "--target", "dotnet", \
+ "--targetargs", "test --no-build", \
+ "--format", "json", \
+ "--output", "/app/test-results/codecoverage"]
 # ENTRYPOINT ["dotnet", "test", "--logger:trx", "/p:CollectCoverage=true"]
